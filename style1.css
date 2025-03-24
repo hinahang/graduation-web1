@@ -16,8 +16,19 @@ body {
 .container {
   text-align: center;
   background: rgba(255, 255, 255, 0.3);
-  padding: 10px;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 80%; /* Default width for all screens */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.invitation {
+  text-align: center;
+  max-width: 90vw;
 }
 
 /* Tiêu đề thư mời */
@@ -26,6 +37,8 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #2b2b2b;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 2rem;
 }
 
 /* Hình ảnh lá thư */
@@ -33,6 +46,9 @@ body {
   width: 500px;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+  width: min(80vw, 400px);
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 .envelop:hover {
@@ -44,6 +60,8 @@ body {
   font-size: 60px;
   font-weight: normal;
   margin: 15px 0;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin: 2rem 0;
 }
 
 /*BG ẩn*/
@@ -64,25 +82,63 @@ body {
   font-size: 20px;
   font-family: "Lora";
   font-style: italic;
+  font-size: clamp(1rem, 3vw, 1.5rem);
 }
 
 /* 📌 **Responsive */
 /* 🔹 Mobile (dưới 480px) */
 @media (max-width: 480px) {
   .container {
-      width: 90%;
-      font-size: 14px;
+    width: 95%;
+    padding: 0.5rem;
   }
-  .letter {
-      font-size: 18px;
-      padding: 8px;
+  
+  .title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin: 1rem 0;
+  }
+  
+  .instruction {
+    font-size: 0.9rem;
+  }
+  
+  .envelop {
+    width: 90vw;
   }
 }
 
 /* 🔹 Tablet (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
   .container {
-      width: 80%;
+    width: 90%;
+    padding: 0.8rem;
+  }
+  
+  .title {
+    font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+  }
+  
+  .subtitle {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+  }
+  
+  .envelop {
+    width: min(70vw, 350px);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    width: 85%;
+  }
+  
+  .envelop {
+    width: min(60vw, 400px);
   }
 }
 
